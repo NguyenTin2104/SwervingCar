@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class gameManager : MonoBehaviour
@@ -18,5 +19,15 @@ public class gameManager : MonoBehaviour
         {
             gameOverText.gameObject.SetActive(true);
         }
+    }
+
+    public virtual void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void OnButtonPress()
+    {
+        Debug.Log("Button clicked " );
     }
 }
